@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Button } from 'antd';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import LoginPage from "./business/login/LoginPage";
+import { Form } from "antd";
+import Layout from "./tool/component/layout/CustomLayou";
+
+const Login = Form.create()(LoginPage);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Button />
-      </div>
+      <Switch>
+        <Route path="/login" component={Login} />
+        {/*<Route path="/outStore" component={OutStore} />*/}
+        <Route
+          path="/"
+          component = {Layout}
+        />
+      </Switch>
     );
   }
 }
