@@ -1,0 +1,62 @@
+@import './variables';
+@import './theme';
+
+// 视窗样式
+// 采用1024x768作为
+html {
+  overflow: hidden;
+  font-size: 16px !important;
+  body {
+    margin: 0;
+    font-family: helvetica, sans-serif;
+    color: @text;
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+      margin: 0;
+    }
+    :global(.input-group-addon) {
+      &:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
+.shadow{
+  box-shadow: @shadow1;
+}
+.highlight{
+  color: @theme;
+  font-weight:bold;
+  text-decoration: underline;
+}
+.danger{
+  color: red;
+  font-weight:bold;
+}
+
+
+
+
+
+
+// 以下是对antd的覆盖
+.table-wrapper{
+  padding: 1rem;
+  background: white;
+  height: calc(100vh - 48px - 32px - 16px - 71px - 16px);
+  // max-height: calc(100vh - 48px - 32px - 16px - 71px - 16px);
+}
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title{
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.ant-modal > .ant-modal-content > .ant-modal-header{
+  background-color: #f5f5f5;
+}

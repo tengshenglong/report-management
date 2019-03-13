@@ -1,0 +1,42 @@
+// @import '~antd/lib/style/themes/default.less';
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+
+.header {
+  height: 48px;
+  width: 100%;
+  box-shadow: rgba(0, 21, 41, 0.08) 0px 1px 4px;
+  position: relative;
+  // padding: 0px 60px 0px 0px;
+  background: rgb(255, 255, 255);
+}
+
+.icon {
+  // padding: 0px 24px;
+  // margin: 0 0 0 12px;
+  font-size: 16px;
+  // line-height: 64px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+  padding: 16px 16px;
+  &:hover {
+    background: @pro-header-hover-bg;
+  }
+
+  &.trigger {
+    transition: all 0.3s, padding 0s;
+    margin-left: 0;
+    &:hover {
+      background-color: rgb(230, 247, 255);
+    }
+  }
+}
+
+.userName {
+  font-size: 16px;
+  line-height: 48px !important;
+  cursor: pointer;
+//  padding-right: 24px;
+  float: right;
+}

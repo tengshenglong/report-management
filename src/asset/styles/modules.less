@@ -1,0 +1,431 @@
+@import "variables";
+
+// 页面组件顶级dom
+.component {
+  margin: 1rem 1rem 0 1rem;
+}
+
+// 筛选区样式
+.filter-form {
+  font-weight: 400;
+  text-align: left;
+  white-space: nowrap;
+  padding: 1rem;
+  box-shadow: @shadow1;
+  border: 1px solid @borderColor;
+  margin: 1rem 0;
+  background: white;
+  position: relative;
+}
+
+// 筛选区固定宽度1194px
+.info-row {
+  width: 1194px;
+}
+
+// 筛选区静态文字控件
+.filter-form__static-text {
+  white-space: nowrap;
+  margin-bottom: 0;
+  line-height: 34px;
+}
+
+.filter-form__static-text_center {
+  //composes: filter-form__static-text;
+  white-space: nowrap;
+  margin-bottom: 0;
+  line-height: 34px;
+  text-align: center;
+}
+
+// 含有筛选区页面的wrapper
+.wrapper {
+  height: 31rem;
+  padding: 1rem;
+  box-shadow: @shadow1;
+  background-color: white;
+  border: 1px solid @borderColor;
+  position: relative;
+  overflow: auto;
+  @media (max-width: 1024px) and (orientation: landscape), (max-width: 768px) and (orientation: portrait){
+    height: auto;
+    min-height: 31rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// 含有分页table和tab页的wrapper
+.wrapper__tab-paging {
+  padding: 1rem;
+  box-shadow: @shadow1;
+  background-color: white;
+  border: 1px solid @borderColor;
+  position: relative;
+  overflow: auto;
+  height: 38rem;
+}
+
+// 没有筛选区页面的wrapper
+.wrapper__no-filter-form {
+  //composes: wrapper;
+  padding: 1rem;
+  box-shadow: @shadow1;
+  background-color: white;
+  border: 1px solid @borderColor;
+  position: relative;
+  overflow: auto;
+  height: 40rem;
+}
+
+.wrapper__no-filter-form__expand {
+  //composes: wrapper__no-filter-form;
+  padding: 1rem;
+  box-shadow: @shadow1;
+  background-color: white;
+  border: 1px solid @borderColor;
+  position: relative;
+  overflow: auto;
+  min-height: 40rem;
+  height: auto;
+}
+
+
+// tab页内的wrapper
+.wrapper__tab-area {
+  border: 1px solid @borderColor;
+  border-top: 0;
+  padding: 1rem;
+  height: 26rem;
+  overflow: auto;
+  position: relative;
+}
+
+.wrapper__tab-area__higher {
+  border: 1px solid @borderColor;
+  border-top: 0;
+  padding: 1rem;
+  height: 32rem;
+  overflow: auto;
+  position: relative;
+}
+
+// 单位控件统一位置（含有tab）
+.unit {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+// 单位控件统一位置（不含有tab）
+.unit__without-tab {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+}
+
+// table中 总计 灰色背景区域
+.datatable__total-area {
+  background-color: @totalTd !important;
+}
+
+// 居中显示提示信息
+.text-tips__center-danger {
+  margin: 0;
+  line-height: 34px;
+  display: inline-block;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+// Dialog框footer中提示信息
+.dialog-message {
+  line-height: 34px;
+  margin-bottom: 0;
+  float: right !important;
+}
+
+
+.edi_text-success {
+  color: #31708f !important;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.edi_text-warning {
+  color: #a94442 !important;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.edi_text-danger{
+  color:#a94442 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.disabled {
+  pointer-events: none;
+  color: grey;
+}
+
+// form 验证信息
+.form-verification {
+  position: absolute;
+  top: 8px;
+  right: -50px;
+}
+
+.scroller{
+  overflow:auto
+}
+
+.edi-ml{
+  margin-left: 16px;
+}
+.edi-ml-sm{
+  margin-left: 8px;
+}
+
+.edi-mr{
+  margin-right: 16px;
+}
+.edi-mr-sm{
+  margin-right: 8px;
+}
+
+.edi-mb{
+  margin-bottom: 16px;
+}
+
+.edi-mb-sm{
+  margin-bottom: 8px;
+}
+
+.edi-mt{
+  margin-top: 16px;
+}
+
+.edi-mt-sm{
+  margin-top: 8px;
+}
+
+// wrapper内的tips
+.wrapper__content-tips {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+}
+
+// 包裹滚动table的wrapper
+.wrapper__table-scroll {
+  height: 23rem;
+  overflow: auto;
+}
+
+.modal{
+  display:block !important;
+  overflow: auto !important;
+}
+
+.modal-dialog {
+  z-index: 1051;
+}
+
+.modal-content{
+  border-radius: 0;
+  background-color: @coolColor1;
+}
+
+.block{
+  min-height: 33rem;
+  position: relative;
+  padding: 1rem;
+  background-color: white;
+  &:not(:last-child){
+    margin-bottom: 1rem;
+  }
+  box-shadow: @shadow1;
+}
+
+.form-group{
+  label{
+    white-space: nowrap;
+    //margin-left: 1rem;
+    margin-bottom: 0;
+    line-height: 34px;
+  }
+  input,select{
+    display: inline-block;
+  }
+
+  .SingleDatePicker{
+    width: 100%;
+  }
+  .form-text{
+    padding-top: 7px;
+    line-height: 22px;
+  }
+  .control-label{
+    line-height: 22px;
+    &.asterisk{
+      position: relative;
+      &:after{
+        content:"*";
+        font-weight: bold;
+        color: red;
+        position:absolute;
+        right: 7px;
+      }
+    }
+  }
+  .radio > label,.checkbox > label {
+    line-height: 22px;
+  }
+}
+
+.modal-header{
+  background-color: white;
+}
+
+.modal-body {
+  height: 35rem;
+  overflow: auto;
+}
+
+.edi-dialog {
+  .modal-dialog{
+    transform: translateY(100px) !important;
+    margin: 0 auto;
+    .modal-body {
+      height: auto;
+      .block {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+.modal-footer{
+  background-color: white;
+  button{
+    margin-left:1rem !important;
+  }
+}
+
+.modal__tips{
+  display:inline-block;
+  color: #a94442;
+}
+
+.modal-table-wrapper{
+  min-height:32rem;
+  padding:0;
+  margin: 1rem;
+  //box-shadow: @shadow1;
+  background-color: white;
+}
+
+.has-badge{
+  //background: transparent;
+  overflow: visible;
+  &:visited,&:focus{
+    //background: transparent;
+    overflow: visible;
+  }
+  .badge{
+    top: 12px;
+    left: calc(100% - 20px);
+    height: 16px;
+    min-width:16px;
+    display: block;
+    position: absolute;
+    background: @theme;
+    border-radius: 0;
+    //border: 2px solid #2b2b2b;
+    font-size: 12px;
+    line-height: 16px;
+    color: white;
+    padding: 0 4.5px;
+  }
+}
+
+
+.edi-message{
+  position: relative !important;
+  color: @headerText;
+  :global{
+    .dropdown-menu{
+      right:0;
+      left: auto;
+      max-height: 410px;
+      overflow: auto;
+      -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.07);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.07);
+      border-radius: 3px;
+      border-color: @borderColor;
+      min-width: 320px;
+      padding: 1rem;
+      a{
+        padding: 3px 20px;
+        min-height: 0;
+        font-size: 12px !important;
+        line-height: 20px;
+        color:inherit !important;
+      }
+      i{
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.edi_progress{
+  position: absolute;
+  top:0;
+  left:0;
+  margin-bottom:0;
+  width: 100%;
+  background-color: transparent !important;
+  box-shadow:none !important;
+}
+
+.edi_progress-bar{
+  height: 8px !important;
+  box-shadow:none;
+  animation-duration:0.2s !important;
+}
+
+
+.progress-item{
+  position:relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  .progress{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    background-color: @theme;
+  }
+}
+
+.section__handleOrder-960 {
+  width: 960px;
+  margin: 0 auto;
+  position:relative;
+  hr{
+    margin:.25rem 0;
+  }
+}
+
+.edi-table__sumrow {
+  background-color: rgb(240, 240, 240) !important;
+}
+
