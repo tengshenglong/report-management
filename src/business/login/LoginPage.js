@@ -2,9 +2,9 @@
  *  Created by tsl on 2019/3/13
  */
 import React, { Component } from "react";
-import style from "./login.module.less";
 import { Button, Col, Form, Icon, Input, Row } from "antd";
 import Cookies from "js-cookie";
+import style from "./login.module.less";
 import image from "../../asset/welcomeLogo.png";
 
 const FormItem = Form.Item;
