@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "./business/login/LoginPage";
 import { Form } from "antd";
-import Layout from "./tool/component/layout/CustomLayou";
+import Layout from "./tool/component/layout/CustomLayout";
 
 const Login = Form.create()(LoginPage);
 
@@ -11,11 +11,7 @@ class App extends Component {
     return (
       <Switch>
         <Route path="/login" component={Login} />
-        {/*<Route path="/outStore" component={OutStore} />*/}
-        <Route
-          path="/"
-          component = {Layout}
-        />
+        <Route path="/" component={Layout} />
       </Switch>
     );
   }

@@ -15,16 +15,20 @@ class CustomHeader extends Component {
             username: Cookies.get("username") || ""
         };
     }
-
+    handleCollapse = (e) => {
+        e && e.preventDefault();
+        this.props.onCollapse(!this.props.collapsed);
+    };
     render() {
         return (
             <Header className={style.header}>
                 <Icon
                     className={style.icon}
                     type={this.props.collapsed ? "menu-unfold" : "menu-fold"}
-                    // onClick={this.handleCollapse}
+                    onClick={this.handleCollapse}
+                    style={{ float: "left",marginLeft:"-40px" }}
                 />
-                <Icon className={style.icon} type="logout" style={{ float: "right",marginRight:"20px" }} />
+                <Icon className={style.icon} type="logout" style={{ float: "right",marginRight:"10px" }} />
             </Header>
         );
     }

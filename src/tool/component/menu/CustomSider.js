@@ -36,7 +36,7 @@ class CustomSider extends Component {
     return (
       <Sider
         theme="light"
-        collapsed={this.state.collapsed}
+        collapsed={this.props.collapsed}
         style={{ height: "100%" }}
         trigger={null}
         collapsible={true}
@@ -45,7 +45,7 @@ class CustomSider extends Component {
         className={styles.sider}
       >
         <div className={styles.logo} id="logo">
-            <img src={image} />
+            {/*<img src={image} />*/}
           <h1>HBDM报表管理系统</h1>
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
