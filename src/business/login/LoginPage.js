@@ -108,7 +108,7 @@ class LoginPage extends Component {
       <div className={style["login-page"]}>
         <div className={style["login-bg"]} />
         <div className={style["login-wrapper"]}>
-          <QueueAnim duration={1000} type="bottom">
+          <QueueAnim duration={800} delay={150} type="bottom">
             <div className={style["login-box"]} key={1}>
               <div className={style["login-content"]}>
                   <Form
