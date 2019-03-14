@@ -5,3 +5,68 @@
 .card-head{
 
 }
+.salesRank {
+  padding: 0 32px 32px 72px;
+}
+.rankingList {
+  margin: 25px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.rankingList li {
+  zoom: 1;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+.rankingList li:before,
+.rankingList li:after {
+  content: ' ';
+  display: table;
+}
+.rankingList li:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.rankingList li span {
+  color: rgba(0,0,0,0.65);
+  font-size: 14px;
+  line-height: 22px;
+}
+.rankingList li .rankingItemNumber {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 16px;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  margin-top: 1.5px;
+}
+.rankingList li .rankingItemNumberActive {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 16px;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+  margin-top: 1.5px;
+  background-color: #314659;
+  color: #fff;
+}
+.rankingList li .rankingItemTitle {
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-right: 8px;
+}
