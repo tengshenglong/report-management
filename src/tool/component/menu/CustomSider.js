@@ -3,31 +3,23 @@
  */
 import React, { Component } from "react";
 import { Layout, Icon, Menu } from "antd";
-import Cookies from "js-cookie";
 import styles from "./style.module.less";
-import image from "../../../asset/welcomeLogo.png";
+import { Link } from "react-router-dom";
+// import image from "../../../asset/welcomeLogo.png";
 
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 class CustomSider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: Cookies.get("username") || "",
-      collapsed: false,
-      openKeys: [],
-      bowerHeight: "calc(100vh - 112px)"
+      openKeys: []
     };
   }
 
   componentWillMount() {}
-  onCollapse = collapsed => {
-    if (collapsed) {
-      this.setState({ openKeys: [] });
-    }
-    this.setState({ collapsed });
-  };
+
   onOpenChange = openKeys => {
     this.setState({ openKeys: [openKeys[openKeys.length - 1]] });
   };
@@ -45,21 +37,23 @@ class CustomSider extends Component {
         className={styles.sider}
       >
         <div className={styles.logo} id="logo">
-            {/*<img src={image} />*/}
+          {/*<img src={image} />*/}
           <h1>HBDM报表管理系统</h1>
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
             <Icon type="user" />
-            <span>nav 1</span>
+            <span>用户管理</span>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="video-camera" />
-            <span>nav 2</span>
+            <Link to="/charts/CustomCharts">
+              <Icon type="video-camera" />
+              <span>图表演示</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="3">
             <Icon type="upload" />
-            <span>nav 3</span>
+            <span>流程处理</span>
           </Menu.Item>
         </Menu>
       </Sider>

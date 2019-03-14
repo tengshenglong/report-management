@@ -3,10 +3,10 @@
  */
 import React, { Component } from "react";
 import { Layout } from "antd";
-import Cookies from "js-cookie";
 import styles from "./style.module.less";
 import Header from "../header/CustomHeader";
 import Sider from "../menu/CustomSider";
+import Routes from "../../common/Routes";
 
 const { Content } = Layout;
 
@@ -14,22 +14,25 @@ class CustomLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: Cookies.get("username") || "",
       collapsed: false,
-      openKeys: [],
-      bowerHeight: "calc(100vh - 112px)"
+      openKeys: []
     };
   }
   handleCollapse = collapsed => {
-        this.setState({ collapsed: collapsed});
-    };
+    this.setState({ collapsed: collapsed });
+  };
   render() {
     return (
       <Layout>
-        <Sider collapsed={this.state.collapsed}/>
+        <Sider collapsed={this.state.collapsed} />
         <Layout>
-          <Header collapsed={this.state.collapsed} onCollapse={this.handleCollapse}/>
-          <Content>content</Content>
+          <Header
+            collapsed={this.state.collapsed}
+            onCollapse={this.handleCollapse}
+          />
+          <Content className={styles.content}>
+            <Routes />
+          </Content>
         </Layout>
       </Layout>
     );
