@@ -7,6 +7,7 @@ import styles from "./style.module.less";
 import Header from "../header/CustomHeader";
 import Sider from "../menu/CustomSider";
 import Routes from "../../common/Routes";
+import QueueAnim from "rc-queue-anim";
 
 const { Content } = Layout;
 
@@ -31,7 +32,9 @@ class CustomLayout extends Component {
             onCollapse={this.handleCollapse}
           />
           <Content className={styles.content}>
-            <Routes />
+            <QueueAnim duration={500} delay={250} type="right">
+              <Routes key={1} />
+            </QueueAnim>
           </Content>
         </Layout>
       </Layout>
