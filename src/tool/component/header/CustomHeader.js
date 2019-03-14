@@ -5,34 +5,39 @@ import React, { Component } from "react";
 import { Layout, Icon } from "antd";
 import Cookies from "js-cookie";
 import style from "./style.module.less";
+import Bread from "../breadcrumb/CustomBread";
 
 const { Header } = Layout;
 
 class CustomHeader extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: Cookies.get("username") || ""
-        };
-    }
-    handleCollapse = (e) => {
-        e && e.preventDefault();
-        this.props.onCollapse(!this.props.collapsed);
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: Cookies.get("username") || ""
     };
-    render() {
-        return (
-            <Header className={style.header}>
-                <Icon
-                    className={style.icon}
-                    type={this.props.collapsed ? "menu-unfold" : "menu-fold"}
-                    onClick={this.handleCollapse}
-                    style={{ float: "left",marginLeft:"-40px" }}
-                />
-                <Icon className={style.icon} type="logout" style={{ float: "right",marginRight:"10px" }} />
-            </Header>
-        );
-    }
-
+  }
+  handleCollapse = e => {
+    e && e.preventDefault();
+    this.props.onCollapse(!this.props.collapsed);
+  };
+  render() {
+    return (
+      <Header className={style.header}>
+        <Icon
+          className={style.icon}
+          type={this.props.collapsed ? "menu-unfold" : "menu-fold"}
+          onClick={this.handleCollapse}
+          style={{ float: "left", marginLeft: "-50px" }}
+        />
+        <Bread />
+        <Icon
+          className={style.icon}
+          type="logout"
+          style={{ float: "right", marginRight: "-35px" }}
+        />
+      </Header>
+    );
+  }
 }
 
 export default CustomHeader;

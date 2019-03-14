@@ -40,10 +40,12 @@ class CustomSider extends Component {
           {/*<img src={image} />*/}
           <h1>HBDM报表管理系统</h1>
         </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+        <Menu theme="dark" mode="inline">
           <Menu.Item key="1">
-            <Icon type="user" />
-            <span>用户管理</span>
+            <Link to="/tables/TableDemo">
+              <Icon type="table" />
+              <span>表格示例</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
             <Link to="/charts/CustomCharts">
