@@ -1,16 +1,35 @@
 import React, { Component } from "react";
-import { Table, Divider, Tag } from "antd";
+import { Table, Divider, Tag, Form ,Drawer} from "antd";
 import SearchBar from "./SearchBar";
+import DrawerContent from "./DrawerContent";
+
+const SearchForm = Form.create()(SearchBar);
 
 class TableDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       collapsed: false,
-      openKeys: []
+      openKeys: [],
+        visible:false
     };
   }
+    showDrawer = () => {
+        this.setState({
+            visible: true,
+        });
+    };
 
+    onClose = () => {
+        this.setState({
+            visible: false,
+        });
+    };
+  handleDrawerShow = () =>{
+    this.setState({
+        visible:true
+    });
+  };
   render() {
     const columns = [
       {
@@ -18,7 +37,9 @@ class TableDemo extends Component {
         align: "center",
         dataIndex: "name",
         key: "name",
-        render: text => <a href="javascript:;">{text}</a>
+        render: text => (<a href="javascript:;" onClick={this.handleDrawerShow}>
+            {text}
+            </a>)
       },
       {
         title: "Age",
@@ -92,8 +113,26 @@ class TableDemo extends Component {
     ];
 
     return (
-    <Table columns={columns} dataSource={data} bordered/>
-  );
+      <div>
+        <SearchForm />
+        <Table
+          columns={columns}
+          dataSource={data}
+          bordered
+          style={{ marginTop: "10px" }}
+        />
+          <Drawer
+              width={700}
+              title="详细信息"
+              placement="right"
+              closable={false}
+              onClose={this.onClose}
+              visible={this.state.visible}
+          >
+              <DrawerContent />
+          </Drawer>
+      </div>
+    );
   }
 }
 
