@@ -6,6 +6,8 @@ import { Button, Col, Form, Icon, Input, Row } from "antd";
 import Cookies from "js-cookie";
 import style from "./login.module.less";
 import image from "../../asset/welcomeLogo.png";
+import Texty from "rc-texty";
+import QueueAnim from "rc-queue-anim";
 
 const FormItem = Form.Item;
 
@@ -106,85 +108,88 @@ class LoginPage extends Component {
       <div className={style["login-page"]}>
         <div className={style["login-bg"]} />
         <div className={style["login-wrapper"]}>
-          <div className={style["login-box"]}>
-            <div className={style["login-content"]}>
-              <Form
-                onSubmit={this.handleSubmit}
-                className={style["login-form"]}
-              >
-                <FormItem>
-                  {getFieldDecorator("account", {
-                    rules: [{ required: true, message: "请输入用户名" }]
-                  })(
-                    <Input
-                      prefix={
-                        <Icon
-                          type="user"
-                          style={{ color: "rgba(0,0,0,.25)" }}
-                        />
-                      }
-                      placeholder="用户名"
-                      name="username"
-                      onChange={e => this.onInputChange(e)}
-                    />
-                  )}
-                </FormItem>
-                <FormItem>
-                  {getFieldDecorator("password", {
-                    rules: [{ required: true, message: "请输入密码" }]
-                  })(
-                    <Input
-                      prefix={
-                        <Icon
-                          type="lock"
-                          style={{ color: "rgba(0,0,0,.25)" }}
-                        />
-                      }
-                      suffix={
-                        <Icon type="eye" style={{ color: "rgba(0,0,0,.25)" }} />
-                      }
-                      type="password"
-                      name="password"
-                      placeholder="密码"
-                      onChange={e => this.onInputChange(e)}
-                    />
-                  )}
-                </FormItem>
-                {captcha && (
-                  <FormItem>
-                    <Row gutter={8}>
-                      <Col span={16}>
-                        {getFieldDecorator("captcha", {
-                          rules: [{ required: true, message: "请输入验证码" }]
-                        })(<Input placeholder="验证码" />)}
-                      </Col>
-                      <Col span={8}>
-                        <img
-                          className={style["login-captcha"]}
-                          src={`data:image/svg+xml;utf8,${captcha}`}
-                        />
-                      </Col>
-                    </Row>
-                  </FormItem>
-                )}
-                <FormItem>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    onClick={this.handleSubmit}
-                    loading={this.state.loading}
-                    className={style["login-form-button"]}
+          <QueueAnim duration={1000} type="bottom">
+            <div className={style["login-box"]} key={1}>
+              <div className={style["login-content"]}>
+                  <Form
+                    onSubmit={this.handleSubmit}
+                    className={style["login-form"]}
                   >
-                    登录
-                  </Button>
-                </FormItem>
-              </Form>
+                    <FormItem>
+                      {getFieldDecorator("account", {
+                        rules: [{ required: true, message: "请输入用户名" }]
+                      })(
+                        <Input
+                          prefix={
+                            <Icon
+                              type="user"
+                              style={{ color: "rgba(0,0,0,.25)" }}
+                            />
+                          }
+                          placeholder="用户名"
+                          name="username"
+                          onChange={e => this.onInputChange(e)}
+                        />
+                      )}
+                    </FormItem>
+                    <FormItem>
+                      {getFieldDecorator("password", {
+                        rules: [{ required: true, message: "请输入密码" }]
+                      })(
+                        <Input
+                          prefix={
+                            <Icon
+                              type="lock"
+                              style={{ color: "rgba(0,0,0,.25)" }}
+                            />
+                          }
+                          suffix={
+                            <Icon type="eye" style={{ color: "rgba(0,0,0,.25)" }} />
+                          }
+                          type="password"
+                          name="password"
+                          placeholder="密码"
+                          onChange={e => this.onInputChange(e)}
+                        />
+                      )}
+                    </FormItem>
+                    {captcha && (
+                      <FormItem>
+                        <Row gutter={8}>
+                          <Col span={16}>
+                            {getFieldDecorator("captcha", {
+                              rules: [{ required: true, message: "请输入验证码" }]
+                            })(<Input placeholder="验证码" />)}
+                          </Col>
+                          <Col span={8}>
+                            <img
+                              className={style["login-captcha"]}
+                              src={`data:image/svg+xml;utf8,${captcha}`}
+                            />
+                          </Col>
+                        </Row>
+                      </FormItem>
+                    )}
+                    <FormItem>
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        onClick={this.handleSubmit}
+                        loading={this.state.loading}
+                        className={style["login-form-button"]}
+                      >
+                        登录
+                      </Button>
+                    </FormItem>
+                  </Form>
+              </div>
             </div>
-          </div>
-
+          </QueueAnim>
           <div className={style["login-box-header"]}>
             <img src={image} />
-            <h2>HBDM报表管理系统</h2>
+            <h2>
+              <Texty> HBDM报表管理系统</Texty>
+            </h2>
           </div>
         </div>
       </div>
