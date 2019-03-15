@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import 'ant-design-pro/dist/ant-design-pro.css';
-import { Button, Statistic } from "antd";
-import { ChartCard, Field, MiniArea, MiniBar, MiniProgress } from 'ant-design-pro/lib/Charts';
+import { ChartCard, Field, MiniArea, MiniBar } from 'ant-design-pro/lib/Charts';
 import NumberInfo from 'ant-design-pro/lib/NumberInfo';
 import numeral from 'numeral';
-
-import { Card, Col, Row ,Divider,Tooltip} from "antd";
-import Icon from "antd/es/icon";
+import {Statistic,Icon, Card, Col, Row ,Divider,Tooltip} from "antd";
 import ArtCharts from './ArtCharts';
 import TableCharts from './TableCharts';
 import LineCharts from './LineCharts';
 import style from "./charts.module.less";
 import moment from 'moment';
 import DatePlan from "./DatePlan";
+import BrachangePie from "./BrachangePie";
 
 const beginDay = new Date().getTime();
 const tabListNoTitle = [
@@ -217,6 +215,9 @@ class CustomCharts extends Component {
         </div>
         <div>
           <DatePlan />
+        </div>
+        <div>
+          <BrachangePie />
         </div>
       </div>
     );
