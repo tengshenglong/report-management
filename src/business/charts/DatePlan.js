@@ -1,19 +1,5 @@
 import React from "react";
-import {
-  G2,
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Label,
-  Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
-} from "bizcharts";
+import { Chart, Geom, Axis, Tooltip, Legend, View, Facet } from "bizcharts";
 import DataSet from "@antv/data-set";
 
 import data from "./mock.json";
@@ -73,7 +59,7 @@ class DatePlan extends React.Component {
     // 加工数据
     // 增加涨幅、跌幅
     // 添加所属月、周几、每个月的第几周
-    data.forEach((obj) => {
+    data.forEach(obj => {
       const date = new Date(obj["日期"]);
       const month = date.getMonth();
       obj.month = month;

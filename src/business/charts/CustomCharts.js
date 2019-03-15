@@ -9,6 +9,7 @@ import { Card, Col, Row ,Divider,Tooltip} from "antd";
 import Icon from "antd/es/icon";
 import ArtCharts from './ArtCharts';
 import TableCharts from './TableCharts';
+import LineCharts from './LineCharts';
 import style from "./charts.module.less";
 import moment from 'moment';
 import DatePlan from "./DatePlan";
@@ -42,7 +43,7 @@ for (let i = 0; i < 20; i += 1) {
 const contentListNoTitle = {
   art: <ArtCharts />,
   list: <TableCharts />,
-  zhu: <p>project content</p>,
+  zhu: <LineCharts />,
   else: <h1>else</h1>
 };
 class CustomCharts extends Component {
