@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Divider, Tag, Form ,Drawer} from "antd";
+import { Table, Divider, Tag, Form, Drawer, Alert } from "antd";
 import SearchBar from "./SearchBar";
 import DrawerContent from "./DrawerContent";
 
@@ -11,25 +11,21 @@ class TableDemo extends Component {
     this.state = {
       collapsed: false,
       openKeys: [],
-        visible:false
+      visible: false
     };
   }
-    showDrawer = () => {
-        this.setState({
-            visible: true,
-        });
-    };
-
-    onClose = () => {
-        this.setState({
-            visible: false,
-        });
-    };
-  handleDrawerShow = () =>{
+  showDrawer = () => {
     this.setState({
-        visible:true
+      visible: true
     });
   };
+
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
+
   render() {
     const columns = [
       {
@@ -37,9 +33,11 @@ class TableDemo extends Component {
         align: "center",
         dataIndex: "name",
         key: "name",
-        render: text => (<a href="javascript:;" onClick={this.handleDrawerShow}>
+        render: text => (
+          <a href="javascript:;" onClick={this.showDrawer}>
             {text}
-            </a>)
+          </a>
+        )
       },
       {
         title: "Age",
@@ -109,28 +107,73 @@ class TableDemo extends Component {
         age: 32,
         address: "Sidney No. 1 Lake Park",
         tags: ["cool", "teacher"]
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        age: 32,
+        address: "New York No. 1 Lake Park",
+        tags: ["nice", "developer"]
+      },
+      {
+        key: "2",
+        name: "Jim Green",
+        age: 42,
+        address: "London No. 1 Lake Park",
+        tags: ["loser"]
+      },
+      {
+        key: "3",
+        name: "Joe Black",
+        age: 32,
+        address: "Sidney No. 1 Lake Park",
+        tags: ["cool", "teacher"]
+      },
+      {
+        key: "1",
+        name: "John Brown",
+        age: 32,
+        address: "New York No. 1 Lake Park",
+        tags: ["nice", "developer"]
+      },
+      {
+        key: "2",
+        name: "Jim Green",
+        age: 42,
+        address: "London No. 1 Lake Park",
+        tags: ["loser"]
+      },
+      {
+        key: "3",
+        name: "Joe Black",
+        age: 32,
+        address: "Sidney No. 1 Lake Park",
+        tags: ["cool", "teacher"]
       }
     ];
 
     return (
       <div>
         <SearchForm />
+        <div style={{ marginTop: "20px" }}>
+          <Alert message="此列表用于展示产品信息！" type="info" />
+        </div>
         <Table
           columns={columns}
           dataSource={data}
           bordered
-          style={{ marginTop: "10px" }}
+          style={{ marginTop: "12px" }}
         />
-          <Drawer
-              width={700}
-              title="详细信息"
-              placement="right"
-              closable={false}
-              onClose={this.onClose}
-              visible={this.state.visible}
-          >
-              <DrawerContent />
-          </Drawer>
+        <Drawer
+          width={640}
+          // title="详细信息"
+          placement="right"
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}
+        >
+          <DrawerContent />
+        </Drawer>
       </div>
     );
   }
