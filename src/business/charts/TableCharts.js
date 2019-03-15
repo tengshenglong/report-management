@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import { TimelineChart } from 'ant-design-pro/lib/Charts';
+import Button from "antd/es/button/button";
 
 const chartData = [];
 for (let i = 0; i < 20; i += 1) {
@@ -14,11 +13,7 @@ for (let i = 0; i < 20; i += 1) {
 class TableCharts extends Component {
   render() {
     return (
-        <TimelineChart
-          height={200}
-          data={chartData}
-          titleMap={{ y1: '售出总数量', y2: '支付笔数' }}
-        />
+       <Button />
       )
   }
 }
