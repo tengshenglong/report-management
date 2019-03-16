@@ -1,9 +1,62 @@
 @import "../../asset/styles/variables.less";
-.ant-card{
+.first-charts {
+  margin: 10px 20px;
+  .ant-row div {
+    background: transparent;
+  }
+
+  .gutter-box {
+    height: 140px;
+    background: #fff;
+    margin-right: 16px;
+
+    div {
+      position: relative;
+
+      p {
+        font-weight: bold;
+        font-size: 26px;
+        margin: -15px -10px;
+      }
+      em {
+        font-size: 14px;font-style: normal;position:absolute;margin:15px 0px;
+      }
+    }
+
+    .progress{margin-top:30px;}
+  }
+  .rightChart {
+    height: 296px;
+    background: #fff;
+  }
+  .header-card {
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: -200px;
+    font-size: 16px;
+  }
+  .today {
+    background: #00998f;
+  }
+  .fcc100 {
+    background: #fcc100;
+  }
+  .c5b7df {
+    background: #5b7dff;
+  }
+  .c5fc27e {
+    background: #5fc27e;
+  }
+}
+.ant-card {
   display: flex;
 }
-.card-head{
-
+.card-head {
 }
 .salesRank {
   padding: 0 32px 32px 72px;
@@ -21,7 +74,7 @@
 }
 .rankingList li:before,
 .rankingList li:after {
-  content: ' ';
+  content: " ";
   display: table;
 }
 .rankingList li:after {
@@ -31,12 +84,12 @@
   height: 0;
 }
 .rankingList li span {
-  color: rgba(0,0,0,0.65);
+  color: rgba(0, 0, 0, 0.65);
   font-size: 14px;
   line-height: 22px;
 }
 .rankingList li .rankingItemNumber {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 20px;
   display: inline-block;
   font-size: 12px;
@@ -49,7 +102,7 @@
   margin-top: 1.5px;
 }
 .rankingList li .rankingItemNumberActive {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 20px;
   display: inline-block;
   font-size: 12px;
