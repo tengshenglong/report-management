@@ -21,7 +21,7 @@
 //     title="销售额趋势"
 //     data={salesData}
 //   />
-// class ArtCharts extends Component {
+// class TableChart extends Component {
 //
 // render(){
 //   const columns = [{
@@ -90,4 +90,4 @@
 //
 // }
 //
-// export default ArtCharts;
+// export default TableChart;

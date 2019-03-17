@@ -8,7 +8,7 @@ import {
   Legend,
 } from "bizcharts";
 
-import data from "./mock.json";
+import data from "../mock.json";
 
 class SanDian extends React.Component {
   render() {
