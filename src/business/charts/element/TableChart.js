@@ -51,7 +51,6 @@ class TableChart extends Component {
         key: "percent"
       }
     ];
-
     const data = [
       {
         index: "1",
