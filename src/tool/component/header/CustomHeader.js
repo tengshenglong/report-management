@@ -20,6 +20,13 @@ class CustomHeader extends Component {
     e && e.preventDefault();
     this.props.onCollapse(!this.props.collapsed);
   };
+
+  logout = () =>{
+      Cookies.remove("username", { path: "" });
+      window.location.href = "/login";
+    // this.props.history.push("/login");
+  };
+
   render() {
     return (
       <Header className={style.header}>
@@ -33,6 +40,7 @@ class CustomHeader extends Component {
         <Icon
           className={style.icon}
           type="logout"
+          onClick={this.logout}
           style={{ float: "right", marginRight: "-35px" }}
         />
       </Header>

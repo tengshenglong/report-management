@@ -54,8 +54,10 @@ class CustomSider extends Component {
             </Link>
           </Menu.Item>
           <Menu.Item key="3">
-            <Icon type="upload" />
-            <span>流程处理</span>
+            <Link to="/steps/StepPage">
+              <Icon type="upload" />
+              <span>流程处理</span>
+            </Link>
           </Menu.Item>
         </Menu>
       </Sider>

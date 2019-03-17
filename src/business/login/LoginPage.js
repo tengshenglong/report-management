@@ -23,6 +23,8 @@ class LoginPage extends Component {
     };
   }
 
+    componentWillMount(){   }
+
   componentDidMount() {
     if (this.state.username) {
       this.props.history.push(this.state.redirect);
@@ -43,6 +45,8 @@ class LoginPage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+      const inFifteenMinutes = new Date(new Date().getTime() + 30 * 60 * 1000);
+      Cookies.set('username', this.state.username, { expires: inFifteenMinutes, path: '' });
     this.props.history.push(this.state.redirect);
     // let loginInfo={
     //         cn:this.state.username,

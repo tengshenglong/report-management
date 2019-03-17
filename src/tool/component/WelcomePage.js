@@ -1,23 +1,28 @@
 import React, { Component } from "react";
-// import  MUtil from '../common/util/mm';
-// const _mm=new MUtil();
+import Cookies from "js-cookie";
+import styles from "./style.module.less";
 
 class WelcomePage extends Component {
   constructor(props) {
     super(props);
   }
   componentWillMount() {
-    // _mm.BrowerHeadTitle();
-    // //判断登陆状态
-    // if(_mm.loginStatus()==false){
-    //   return;
-    // }
+    //判断登陆状态
+    if (!Cookies.get("username")) {
+      window.location.href = "/login";
+      return;
+    }
   }
 
   render() {
     return (
-      <div>
-        <img src={require("../../asset/welcome.png")} alt="" />
+      <div className={styles.bg}>
+        <div className={styles.content}>
+          <div>
+            <img src={require("../../asset/welcomeLogo.png")} alt="" />
+          </div>
+          <div className={styles.font}>HBDM报表管理系统</div>
+        </div>
       </div>
     );
   }
