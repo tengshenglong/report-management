@@ -6,7 +6,7 @@ import {
   Col,
   Row,
   Progress,
-  Divider,
+  Radio,
   Tooltip
 } from "antd";
 import TableChart from "./element/TableChart";
@@ -20,7 +20,6 @@ import Zhu from "./element/Zhu";
 import ListRanking from "./element/ListRanking";
 import Panel from "./element/Panel";
 import Pie from "./element/Pie";
-import Table from "antd/es/table/Table";
 import ThirdLineTable from "./element/ThirdLineTable";
 
 const beginDay = new Date().getTime();
@@ -57,14 +56,18 @@ class ChartsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      noTitleKey: "zhexian"
+      noTitleKey: "zhexian",
+      size:"年"
     };
   }
 
   onTabChange = (key, type) => {
     this.setState({ [type]: key });
   };
-
+  handleSizeChange = (e) => {
+   // console.log(e.target);
+    this.setState({ size: e.target.value });
+  }
   render() {
     return (
       <div>
@@ -256,10 +259,36 @@ class ChartsPage extends Component {
               </div>
             </Col>
             <Col span={8}>
-              <div className={style["gutter-box2"]}>111</div>
+              <div className={style["gutter-box2"]}>
+                <Card
+                  title="Default"
+                  extra={
+                    <Radio.Group value={this.state.size} onChange={this.handleSizeChange}>
+                      <Radio.Button value="年">Large</Radio.Button>
+                      <Radio.Button value="月">Default</Radio.Button>
+                      <Radio.Button value="日">Small</Radio.Button>
+                    </Radio.Group>
+                  }
+                >
+                  <Pie />
+                </Card>
+              </div>
             </Col>
             <Col span={8}>
-              <div style={{ background: "#fff", height: "400px" }}>1111</div>
+              <div className={style["gutter-box2"]}>
+                <Card
+                  title="Default"
+                  extra={
+                    <Radio.Group value={this.state.size} onChange={this.handleSizeChange}>
+                      <Radio.Button value="年">Large</Radio.Button>
+                      <Radio.Button value="月">Default</Radio.Button>
+                      <Radio.Button value="日">Small</Radio.Button>
+                    </Radio.Group>
+                  }
+                >
+                  <Pie />
+                </Card>
+              </div>
             </Col>
           </Row>
         </div>
