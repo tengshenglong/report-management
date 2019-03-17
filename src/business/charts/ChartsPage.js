@@ -57,17 +57,17 @@ class ChartsPage extends Component {
     super(props);
     this.state = {
       noTitleKey: "zhexian",
-      size:"年"
+      size: "年"
     };
   }
 
   onTabChange = (key, type) => {
     this.setState({ [type]: key });
   };
-  handleSizeChange = (e) => {
-   // console.log(e.target);
+  handleSizeChange = e => {
+    // console.log(e.target);
     this.setState({ size: e.target.value });
-  }
+  };
   render() {
     return (
       <div>
@@ -253,9 +253,7 @@ class ChartsPage extends Component {
           <Row gutter={24}>
             <Col span={8}>
               <div className={style["gutter-box2"]}>
-                <Card title="统计" extra={
-                  <a href="#">More</a>
-                }>
+                <Card title="统计" extra={<a href="#">More</a>}>
                   <ThirdLineTable />
                 </Card>
               </div>
@@ -265,7 +263,10 @@ class ChartsPage extends Component {
                 <Card
                   title="占比"
                   extra={
-                    <Radio.Group value={this.state.size} onChange={this.handleSizeChange}>
+                    <Radio.Group
+                      value={this.state.size}
+                      onChange={this.handleSizeChange}
+                    >
                       <Radio.Button value="年">Large</Radio.Button>
                       <Radio.Button value="月">Default</Radio.Button>
                       <Radio.Button value="日">Small</Radio.Button>
@@ -281,14 +282,17 @@ class ChartsPage extends Component {
                 <Card
                   title="Default"
                   extra={
-                    <Radio.Group value={this.state.size} onChange={this.handleSizeChange}>
+                    <Radio.Group
+                      value={this.state.size}
+                      onChange={this.handleSizeChange}
+                    >
                       <Radio.Button value="年">Large</Radio.Button>
                       <Radio.Button value="月">Default</Radio.Button>
                       <Radio.Button value="日">Small</Radio.Button>
                     </Radio.Group>
                   }
                 >
-                  <Panel style={{height:"400px",backgroundColor:"#fff"}} />
+                  <Panel style={{ height: "400px", backgroundColor: "#fff" }} />
                 </Card>
               </div>
             </Col>

@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Legend,
-  Guide
-} from "bizcharts";
+import { Chart, Geom, Axis, Tooltip, Coord, Legend, Guide } from "bizcharts";
 import DataSet from "@antv/data-set";
 
 class Pie extends React.Component {
@@ -61,26 +53,26 @@ class Pie extends React.Component {
           height={400}
           data={dv}
           scale={cols}
-         // padding={[80, 100, 80, 80]}
+          // padding={[80, 100, 80, 80]}
           forceFit
-          style={{marginLeft:"-50px"}}
+          style={{ marginLeft: "-50px" }}
         >
           <Coord type={"theta"} radius={0.75} innerRadius={0.6} />
           <Axis name="percent" />
           <Legend
             position="bottom"
             // offsetY={-window.innerHeight / 2 + 120}
-             offsetX={40}
+            offsetX={40}
             itemGap={60}
           />
           <Tooltip
             showTitle={false}
-            itemTpl="<li><span style=&quot;background-color:{color};&quot; class=&quot;g2-tooltip-marker&quot;></span>{name}: {value}</li>"
+            itemTpl='<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
           />
           <Guide>
             <Html
               position={["50%", "50%"]}
-              html="<div style=&quot;color:#8c8c8c;font-size:1.16em;text-align: center;width: 10em;&quot;>销售额<br><span style=&quot;color:#262626;font-size:1.5em&quot;>￥23049</span></div>"
+              html='<div style="color:#8c8c8c;font-size:1.16em;text-align: center;width: 10em;">销售额<br><span style="color:#262626;font-size:1.5em">￥23049</span></div>'
               alignX="middle"
               alignY="middle"
             />
@@ -103,8 +95,7 @@ class Pie extends React.Component {
               lineWidth: 1,
               stroke: "#fff"
             }}
-          >
-          </Geom>
+          />
         </Chart>
       </div>
     );
