@@ -58,7 +58,7 @@ class Pie extends React.Component {
     return (
       <div>
         <Chart
-          height={350}
+          height={400}
           data={dv}
           scale={cols}
          // padding={[80, 100, 80, 80]}
@@ -71,7 +71,7 @@ class Pie extends React.Component {
             position="bottom"
             // offsetY={-window.innerHeight / 2 + 120}
              offsetX={40}
-            itemGap={50}
+            itemGap={60}
           />
           <Tooltip
             showTitle={false}

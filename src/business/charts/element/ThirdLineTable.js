@@ -53,6 +53,7 @@ class ThirdLineTable extends Component {
     }];
 
     return <Table
+      style={{height:"410px",background:"#fff"}}
       dataSource={dataSource}
       columns={columns}
       // showHeader={false}

@@ -253,7 +253,9 @@ class ChartsPage extends Component {
           <Row gutter={24}>
             <Col span={8}>
               <div className={style["gutter-box2"]}>
-                <Card title="Default" extra={<a href="#">More</a>}>
+                <Card title="统计" extra={
+                  <a href="#">More</a>
+                }>
                   <ThirdLineTable />
                 </Card>
               </div>
@@ -261,7 +263,7 @@ class ChartsPage extends Component {
             <Col span={8}>
               <div className={style["gutter-box2"]}>
                 <Card
-                  title="Default"
+                  title="占比"
                   extra={
                     <Radio.Group value={this.state.size} onChange={this.handleSizeChange}>
                       <Radio.Button value="年">Large</Radio.Button>
@@ -286,7 +288,7 @@ class ChartsPage extends Component {
                     </Radio.Group>
                   }
                 >
-                  <Pie />
+                  <Panel style={{height:"400px",backgroundColor:"#fff"}} />
                 </Card>
               </div>
             </Col>

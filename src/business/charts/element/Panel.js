@@ -1,58 +1,143 @@
-import React from 'react';
-import { Chart, Tooltip, Geom, Guide } from 'bizcharts';
+import React from "react";
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Tooltip,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util
+} from "bizcharts";
+import DataSet from "@antv/data-set";
 
-const { Text } = Guide;
-
-const data = [{
-  gender: 'male',
-  path: 'M381.759 0h292l-.64 295.328-100.127-100.096-94.368 94.368C499.808 326.848 512 369.824 512 415.712c0 141.376-114.56 256-256 256-141.376 0-256-114.624-256-256s114.624-256 256-256c48.8 0 94.272 13.92 133.12 37.632l93.376-94.592L381.76 0zM128.032 415.744c0 70.688 57.312 128 128 128s128-57.312 128-128-57.312-128-128-128-128 57.312-128 128z',
-  value: 80,
-}];
-
-const scale = {
-  value: {
-    min: 0,
-    max: 100,
-  },
-};
-
-class Panel extends React.Component {
+class Withline extends React.Component {
   render() {
+    const { DataView } = DataSet;
+    const data = [
+      {
+        item: "Design",
+        a: 70,
+        b: 30
+      },
+      {
+        item: "Development",
+        a: 60,
+        b: 70
+      },
+      {
+        item: "Marketing",
+        a: 50,
+        b: 60
+      },
+      {
+        item: "Users",
+        a: 40,
+        b: 50
+      },
+      {
+        item: "Test",
+        a: 60,
+        b: 70
+      },
+      {
+        item: "Language",
+        a: 70,
+        b: 50
+      },
+      {
+        item: "Technology",
+        a: 50,
+        b: 40
+      },
+      {
+        item: "Support",
+        a: 30,
+        b: 40
+      },
+      {
+        item: "Sales",
+        a: 60,
+        b: 40
+      },
+      {
+        item: "UX",
+        a: 50,
+        b: 60
+      }
+    ];
+    const dv = new DataView().source(data);
+    dv.transform({
+      type: "fold",
+      fields: ["a", "b"],
+      // 展开字段集
+      key: "user",
+      // key字段
+      value: "score" // value字段
+    });
+    const cols = {
+      score: {
+        min: 0,
+        max: 80
+      }
+    };
     return (
-      <Chart height={280} data={data} scale={scale} forceFit>
-        <Tooltip />
-        <Geom
-          type="interval"
-          position="gender*value"
-          color="gender"
-          shape="liquid-fill-gauge"
-          style={{
-            lineWidth: 10,
-            opacity: 0.75,
-          }}
-        />
-        <Guide>
-          {
-            data.map(
-              row => (<Text
-                content={`${row.value}%`}
-                top
-                position={{
-                  gender: row.gender,
-                  value: 50,
-                }}
-                style={{
-                  opacity: 0.75,
-                  fontSize: 30,
-                  textAlign: 'center',
-                }}
-              />))
-          }
-        </Guide>
-      </Chart>
+      <div>
+        <Chart
+          height={400}
+          data={dv}
+          padding={[20, 20, 95, 20]}
+          scale={cols}
+          forceFit
+        >
+          <Coord type="polar" radius={0.8} />
+          <Axis
+            name="item"
+            line={null}
+            tickLine={null}
+            grid={{
+              lineStyle: {
+                lineDash: null
+              },
+              hideFirstLine: false
+            }}
+          />
+          <Tooltip />
+          <Axis
+            name="score"
+            line={null}
+            tickLine={null}
+            grid={{
+              type: "polygon",
+              lineStyle: {
+                lineDash: null
+              },
+              alternateColor: "rgba(0, 0, 0, 0.04)"
+            }}
+          />
+          <Legend name="user" marker="circle" offsetX={20} offsetY={45} />
+          <Geom type="line" position="item*score" color="user" size={2} />
+          <Geom
+            type="point"
+            position="item*score"
+            color="user"
+            shape="circle"
+            size={4}
+            style={{
+              stroke: "#fff",
+              lineWidth: 1,
+              fillOpacity: 1
+            }}
+          />
+        </Chart>
+      </div>
     );
   }
 }
 
-// CDN END
-export default Panel;
+export default Withline;
