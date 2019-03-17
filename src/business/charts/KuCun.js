@@ -10,11 +10,11 @@ class KuCun extends React.Component {
     const data = [
       {
         year: "2019.3.10",
-        value: 15468
+        value: 3300
       },
       {
         year: "2019.3.11",
-        value: 16100
+        value: 10320
       },
       {
         year: "2019.3.12",
@@ -22,7 +22,7 @@ class KuCun extends React.Component {
       },
       {
         year: "2019.3.13",
-        value: 17409
+        value: 8900
       },
       {
         year: "2019.3.14",
@@ -30,19 +30,19 @@ class KuCun extends React.Component {
       },
       {
         year: "2019.3.15",
-        value: 31056
+        value: 4056
       },
       {
         year: "2019.3.16",
-        value: 3198
+        value: 13198
       },
       {
         year: "2019.3.17",
-        value: 32040
+        value: 2040
       },
       {
         year: "2019.3.18",
-        value: 332
+        value: 33200
       }
     ];
     const cols = {

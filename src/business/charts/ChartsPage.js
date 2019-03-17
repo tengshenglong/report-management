@@ -7,6 +7,7 @@ import BeiHuo from "./BeiHuo";
 import style from "./charts.module.less";
 import moment from "moment";
 import KuCun from "./KuCun";
+import SanDian from "./SanDian";
 
 const beginDay = new Date().getTime();
 const tabListNoTitle = [
@@ -125,7 +126,7 @@ class ChartsPage extends Component {
                       style={{ width: "100%",height:"100%",padding:'0 12px' }}
                     >
                       <div>
-                        <p>3567259.29</p>
+                        <p>2689012</p>
                       </div>
                       <KuCun />
                     </Card>
@@ -150,7 +151,9 @@ class ChartsPage extends Component {
               </Row>
             </Col>
             <Col span={13}>
-              <div className={style["rightChart"]}>111</div>
+              <div className={style["rightChart"]}>
+                <SanDian />
+              </div>
             </Col>
           </Row>
         </div>

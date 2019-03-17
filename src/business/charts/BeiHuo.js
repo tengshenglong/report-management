@@ -30,7 +30,7 @@ class BeiHuo extends React.Component {
       },
       {
         year: "2019年6月",
-        sales: 38
+        sales: 88
       },
       {
         year: "2019年7月",
@@ -38,11 +38,11 @@ class BeiHuo extends React.Component {
       },
       {
         year: "2019年8月",
-        sales: 38
+        sales: 98
       },
       {
         year: "2019年9月",
-        sales: 38
+        sales: 338
       },
       {
         year: "2019年10月",
@@ -50,6 +50,10 @@ class BeiHuo extends React.Component {
       },
       {
         year: "2019年11月",
+        sales: 68
+      },
+      {
+        year: "2019年12月",
         sales: 38
       }
     ];
