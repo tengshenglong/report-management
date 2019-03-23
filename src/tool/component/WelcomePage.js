@@ -3,9 +3,7 @@ import Cookies from "js-cookie";
 import styles from "./style.module.less";
 
 class WelcomePage extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   componentWillMount() {
     //判断登陆状态
     if (!Cookies.get("username")) {

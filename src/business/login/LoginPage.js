@@ -167,6 +167,7 @@ class LoginPage extends Component {
                           </Col>
                           <Col span={8}>
                             <img
+                              alt={"这是一个图片"}
                               className={style["login-captcha"]}
                               src={`data:image/svg+xml;utf8,${captcha}`}
                             />
@@ -190,7 +191,7 @@ class LoginPage extends Component {
             </div>
           </QueueAnim>
           <div className={style["login-box-header"]}>
-            <img src={image} />
+            <img src={image} alt={"这是一个图片"}/>
             <h2>
               <Texty> HBDM报表管理系统</Texty>
             </h2>

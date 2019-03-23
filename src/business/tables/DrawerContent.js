@@ -89,7 +89,7 @@ class DrawerContent extends Component {
             <DescriptionItem title="Department" content="AFX" />
           </Col>
           <Col span={12}>
-            <DescriptionItem title="Supervisor" content={<a>Lin</a>} />
+            <DescriptionItem title="Supervisor" content={<a href="javascript:void(0)">Lin</a>} />
           </Col>
         </Row>
         <Row>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Steps, Popover, Button, Form } from "antd";
+import { Steps, Button, Form } from "antd";
 import styles from "./style.module.less";
 import StepFirst from "./StepFirst";
 

@@ -6,8 +6,7 @@ import {
   Col,
   Row,
   Progress,
-  Radio,
-  Tooltip
+  Radio
 } from "antd";
 import TableChart from "./element/TableChart";
 import ZheXian from "./element/ZheXian";
@@ -253,7 +252,7 @@ class ChartsPage extends Component {
           <Row gutter={24}>
             <Col span={8}>
               <div className={style["gutter-box2"]}>
-                <Card title="统计" extra={<a href="#">More</a>}>
+                <Card title="统计" extra={<a href="javascript:;">More</a>}>
                   <ThirdLineTable />
                 </Card>
               </div>
