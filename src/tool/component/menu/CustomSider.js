@@ -59,6 +59,12 @@ class CustomSider extends Component {
               <span>流程处理</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/user/UserPage">
+              <Icon type="user" />
+              <span>用户管理</span>
+            </Link>
+          </Menu.Item>
         </Menu>
       </Sider>
     );
