@@ -34,7 +34,7 @@ class TableDemo extends Component {
         dataIndex: "name",
         key: "name",
         render: text => (
-          <a href="javascript:void(0);" onClick={this.showDrawer}>
+          <a href=" # " onClick={this.showDrawer}>
             {text}
           </a>
         )
@@ -78,9 +78,9 @@ class TableDemo extends Component {
         key: "action",
         render: (text, record) => (
           <span>
-            <a href="javascript:void(0)">修改</a>
+            <a href=" # ">修改</a>
             <Divider type="vertical" />
-            <a href="javascript:void(0)">删除</a>
+            <a href=" # ">删除</a>
           </span>
         )
       }

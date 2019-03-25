@@ -8,6 +8,7 @@ import Header from "../header/CustomHeader";
 import Sider from "../menu/CustomSider";
 import Routes from "../../common/Routes";
 import QueueAnim from "rc-queue-anim";
+import Cookies from "js-cookie";
 
 const { Content } = Layout;
 
@@ -19,6 +20,11 @@ class CustomLayout extends Component {
       openKeys: []
     };
   }
+  componentWillMount() {
+    if(!Cookies.get("username")) this.props.history.push("/login")
+
+  }
+
   handleCollapse = collapsed => {
     this.setState({ collapsed: collapsed });
   };

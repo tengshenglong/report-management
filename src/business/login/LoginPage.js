@@ -18,23 +18,23 @@ class LoginPage extends Component {
     this.state = {
       username: Cookies.get("username") || "",
       password: "",
-      redirect: "/",
+      redirect: "/login",
       loading: false
     };
   }
 
-    componentWillMount(){   }
+    // componentWillMount(){   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (this.state.username) {
-      this.props.history.push(this.state.redirect);
+      this.props.history.push(this.state.redirect,null);
     }
 
-    document.addEventListener("keydown", this.handleEnterKey);
+  //  document.addEventListener("keydown", this.handleEnterKey);
   }
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleEnterKey);
-  }
+  // componentWillUnmount() {
+  //   document.removeEventListener("keydown", this.handleEnterKey);
+  // }
   onInputChange(e) {
     let inputValue = e.target.value,
       inputName = e.target.name;
