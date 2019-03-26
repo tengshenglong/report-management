@@ -6,22 +6,22 @@ import { Divider, Popconfirm, Table } from "antd";
 import moment from "moment";
 import CustomModal from "../../tool/component/shared/modal";
 import FormContent from "./element/FormContent";
-export default class UserPage extends Component{
-  constructor(props){
+export default class UserPage extends Component {
+  constructor(props) {
     super(props);
-    this.state={
-      condition:{},
-      flag:false,
-      dataRecord:'',
-      title:"",
-      dataList:[
+    this.state = {
+      condition: {},
+      flag: false,
+      dataRecord: "",
+      title: "",
+      dataList: [
         {
-          account:"admin",
-          name:"admin",
-          ins:"icebox",
-          role:"root",
-          hasRole:"all",
-          date:'1124234'
+          account: "admin",
+          name: "admin",
+          ins: "icebox",
+          role: "root",
+          hasRole: "all",
+          date: "1124234"
         }
       ]
     };
@@ -33,31 +33,27 @@ export default class UserPage extends Component{
         value: "name",
         options: null,
         componentOptions: {
-          placeholder: "请输入",
-        //  onChange: this.handleConditionChange("itemId")
+          placeholder: "请输入"
+          //  onChange: this.handleConditionChange("itemId")
         }
       },
       {
         label: "产业选择",
         type: "select",
         value: "ins",
-        options: [{ key: "2", label: "冰箱" },
-      { key: "3", label: "洗衣机" }
-      ],
+        options: [{ key: "2", label: "冰箱" }, { key: "3", label: "洗衣机" }],
         componentOptions: {
-          placeholder: "请输入",
-       //   onChange: this.handleConditionChange("barCode")
+          placeholder: "请输入"
+          //   onChange: this.handleConditionChange("barCode")
         }
       },
       {
         label: "角色选择",
         type: "select",
         value: "role",
-        options: [{ key: "2", label: "root" },
-          { key: "3", label: "develop" }
-        ],
+        options: [{ key: "2", label: "root" }, { key: "3", label: "develop" }],
         componentOptions: {
-          placeholder: "请输入",
+          placeholder: "请输入"
           //   onChange: this.handleConditionChange("barCode")
         }
       },
@@ -65,21 +61,19 @@ export default class UserPage extends Component{
         label: "权限选择",
         type: "select",
         value: "ins",
-        options: [{ key: "2", label: "冰箱" },
-          { key: "3", label: "洗衣机" }
-        ],
+        options: [{ key: "2", label: "冰箱" }, { key: "3", label: "洗衣机" }],
         componentOptions: {
           placeholder: "请输入",
-          mode:"multiple",
+          mode: "multiple"
           //   onChange: this.handleConditionChange("barCode")
         }
-      },
+      }
     ];
     this.columns = [
       {
         title: "登录账号",
         dataIndex: "account",
-        key: "account",
+        key: "account"
         // render: (text, record, index) => {
         //   return index + 1;
         // }
@@ -108,15 +102,15 @@ export default class UserPage extends Component{
         title: "创建日期",
         dataIndex: "date",
         key: "date",
-        render: text => text? moment(text).format("YYYY-MM-DD HH:mm:ss") : ""
+        render: text => (text ? moment(text).format("YYYY-MM-DD HH:mm:ss") : "")
       },
       {
         title: "操作",
         dataIndex: "action",
         className: "table-action-center",
         key: "action",
-       // fixed: "right",
-      //  width: "150px",
+        // fixed: "right",
+        //  width: "150px",
         render: (text, record) => {
           return (
             <span>
@@ -124,7 +118,10 @@ export default class UserPage extends Component{
                 修改
               </a>
               <Divider type="vertical" />
-              <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record)}>
+              <Popconfirm
+                title="确认删除?"
+                onConfirm={() => this.handleDelete(record)}
+              >
                 <a href=" #">删除</a>
               </Popconfirm>
             </span>
@@ -133,64 +130,70 @@ export default class UserPage extends Component{
       }
     ];
   }
-  searchPromotion = (e) =>{
+  searchPromotion = e => {
     console.log(e);
   };
-  resetCondition = ()=>{
-    Object.keys(this.state.condition).forEach(r=>{
-      delete this.state.condition[r]
+  resetCondition = () => {
+    Object.keys(this.state.condition).forEach(r => {
+      delete this.state.condition[r];
     });
   };
-  toShow = (record) => ()=> {
-    if(record){
+  toShow = record => () => {
+    if (record) {
       this.setState({
-        title:"修改用户"
-      })
-    } else{
+        title: "修改用户"
+      });
+    } else {
       this.setState({
-        title:"新建用户"
-      })
+        title: "新建用户"
+      });
     }
-    let recorder = record?record:'';
+    let recorder = record ? record : "";
     this.setState({
-      flag:true,
-      dataRecord:recorder
-    })
+      flag: true,
+      dataRecord: recorder
+    });
   };
-  handleDelete = (record) =>{
-    return console.log(record)
+  handleDelete = record => {
+    return console.log(record);
   };
-  cancel = ()=>{
+  cancel = () => {
     this.setState({
-      flag:false
-    })
+      flag: false
+    });
   };
-  renderContent=()=>{
-    return <FormContent handleCancel={this.cancel} content={this.state.dataRecord} />
-  };
-  render(){
+  renderContent = () => {
     return (
-    <div>
-      <ConditionSelector
-        conditions={this.conditionConfig}
-        onSubmit={this.searchPromotion}
-        reset={this.resetCondition}
-      />
-      <section className={style["table-wrapper"]}>
-        <TableOperator
-          hasSearchBox={false}
-          buttonName="新建用户"
-          onButtonClick={this.toShow()}
+      <FormContent handleCancel={this.cancel} content={this.state.dataRecord} />
+    );
+  };
+  render() {
+    return (
+      <div>
+        <ConditionSelector
+          conditions={this.conditionConfig}
+          onSubmit={this.searchPromotion}
+          reset={this.resetCondition}
         />
-        <CustomModal title={this.state.title} flag={this.state.flag} handleContent={this.renderContent()}/>
-        <Table
-          dataSource={this.state.dataList}
-          columns={this.columns}
-          // scroll={{ x: 1366 }}
-          rowKey="account"
-        />
-      </section>
-    </div>
-    )
+        <section className={style["table-wrapper"]}>
+          <TableOperator
+            hasSearchBox={false}
+            buttonName="新建用户"
+            onButtonClick={this.toShow()}
+          />
+          <CustomModal
+            title={this.state.title}
+            flag={this.state.flag}
+            handleContent={this.renderContent()}
+          />
+          <Table
+            dataSource={this.state.dataList}
+            columns={this.columns}
+            // scroll={{ x: 1366 }}
+            rowKey="account"
+          />
+        </section>
+      </div>
+    );
   }
 }

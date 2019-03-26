@@ -153,7 +153,7 @@ class TableDemo extends Component {
     ];
 
     return (
-      <div style={{background:"#fff",padding:"8px"}}>
+      <div style={{ background: "#fff", padding: "8px" }}>
         <SearchForm />
         <div style={{ marginTop: "20px" }}>
           <Alert message="此列表用于展示产品信息！" type="info" />

@@ -2,7 +2,7 @@ import { Input, Button } from "antd";
 import React from "react";
 import style from "./style.module.less";
 class TableOperator extends React.Component {
-   render() {
+  render() {
     const parameters = this.props;
     // const {values} = parameters;
     return (

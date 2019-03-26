@@ -14,9 +14,9 @@ export default class RolePage extends Component {
       title: "",
       dataList: [
         {
-          id:"123",
+          id: "123",
           role: "root",
-          desc:"root用户"
+          desc: "root用户"
         }
       ]
     };

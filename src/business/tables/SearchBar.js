@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Row, Col, Input, Button, Icon, Select,DatePicker } from "antd";
+import { Form, Row, Col, Input, Button, Icon, Select, DatePicker } from "antd";
 
 const formItemLayout = {
   labelCol: { span: 5 },
@@ -147,7 +147,11 @@ class SearchBar extends Component {
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               重置
             </Button>
-            <a href=" #" style={{ marginLeft: 8, fontSize: 14 }} onClick={this.toggle}>
+            <a
+              href=" #"
+              style={{ marginLeft: 8, fontSize: 14 }}
+              onClick={this.toggle}
+            >
               {this.state.expand ? "收起" : "展开"}
               <Icon type={this.state.expand ? "up" : "down"} />
             </a>

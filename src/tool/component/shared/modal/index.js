@@ -9,16 +9,16 @@ class CustomModal extends Component {
   render() {
     const flag = this.props.flag;
     return (
-        <Modal
-          title={this.props.title}
-          visible={flag}
-          onCancel={this.props.handleCancel}
-          destroyOnClose={true}
-          footer={null}
-          centered={true}
-        >
-          {this.props.handleContent}
-        </Modal>
+      <Modal
+        title={this.props.title}
+        visible={flag}
+        onCancel={this.props.handleCancel}
+        destroyOnClose={true}
+        footer={null}
+        centered={true}
+      >
+        {this.props.handleContent}
+      </Modal>
     );
   }
 }

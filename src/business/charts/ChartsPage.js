@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Statistic,
-  Icon,
-  Card,
-  Col,
-  Row,
-  Progress,
-  Radio
-} from "antd";
+import { Statistic, Icon, Card, Col, Row, Progress, Radio } from "antd";
 import TableChart from "./element/TableChart";
 import ZheXian from "./element/ZheXian";
 import BeiHuo from "./element/BeiHuo";

@@ -8,21 +8,19 @@ const { RangePicker } = DatePicker;
 export default class UserPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
-  componentSelector = (component) =>{
+  componentSelector = component => {
     if (isEmpty(component.type)) {
       return null;
     }
-    const { componentOptions: config} = component;
-    const {style = {}} = config;
+    const { componentOptions: config } = component;
+    const { style = {} } = config;
     switch (component.type.toLowerCase()) {
       case "date":
         return <DatePicker {...config} style={{ width: 160, ...style }} />;
       case "cascader":
-        return <Cascader {...config} style={{ width: 160, ...style }}/>;
+        return <Cascader {...config} style={{ width: 160, ...style }} />;
       case "range":
         return <RangePicker {...config} style={{ width: 260, ...style }} />;
       case "select":
@@ -41,11 +39,11 @@ export default class UserPage extends Component {
         return <Input {...config} style={{ width: 160, ...style }} />;
     }
   };
-  handleSubmit = (e) =>{
+  handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        console.log("Received values of form: ", values);
       }
     });
   };
@@ -62,37 +60,41 @@ export default class UserPage extends Component {
         <Form layout="inline" onSubmit={this.handleSubmit}>
           <section className={styles["search-items"]}>
             {this.props.conditions.map((d, index) => {
-              const {style = {}, className} = d;
+              const { style = {}, className } = d;
               return (
-                <Form.Item key={index} label={d.label} style={style} className={className}>
-                  {
-                  //   getFieldDecorator(d.value, {
+                <Form.Item
+                  key={index}
+                  label={d.label}
+                  style={style}
+                  className={className}
+                >
+                  {//   getFieldDecorator(d.value, {
                   //   initialValue: d.defaultValue
                   // })
-                  (this.componentSelector(d))}
+                  this.componentSelector(d)}
                 </Form.Item>
               );
             })}
           </section>
 
           <section className={styles["search-btns"]}>
-            <Form.Item style={{ float: "right", marginRight: 0 }} >
+            <Form.Item style={{ float: "right", marginRight: 0 }}>
               <Button
                 type="primary"
                 onClick={this.handleSubmit}
-                key="submit" htmlType="submit"
+                key="submit"
+                htmlType="submit"
               >
                 查询
               </Button>
               <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
                 重置
               </Button>
-              {
-                isExport ?  (<Button style={{ marginLeft: 8 }} onClick={this.handleExport}>
+              {isExport ? (
+                <Button style={{ marginLeft: 8 }} onClick={this.handleExport}>
                   导出
-                </Button>) : null
-              }
-
+                </Button>
+              ) : null}
             </Form.Item>
           </section>
         </Form>
