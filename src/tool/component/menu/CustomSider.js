@@ -65,6 +65,12 @@ class CustomSider extends Component {
               <span>用户管理</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="5">
+            <Link to="/role/RolePage">
+              <Icon type="user" />
+              <span>角色管理</span>
+            </Link>
+          </Menu.Item>
         </Menu>
       </Sider>
     );

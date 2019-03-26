@@ -5,6 +5,7 @@ import ChartsPage from "../../business/charts/ChartsPage";
 import TableDemo from "../../business/tables/TableDemo";
 import StepPage from "../../business/steps/StepPage";
 import UserPage from "../../business/user/UserPage";
+import RolePage from "../../business/role/RolePage";
 
 const Routes = () => (
   <Switch>
@@ -13,6 +14,7 @@ const Routes = () => (
     <Route path="/tables/TableDemo" component={TableDemo} />
     <Route path="/steps/StepPage" component={StepPage} />
     <Route path="/user/UserPage" component={UserPage} />
+    <Route path="/role/RolePage" component={RolePage} />
     <Route render={() => <h1>找不到此页面</h1>} />
   </Switch>
 );

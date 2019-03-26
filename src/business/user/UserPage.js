@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ConditionSelector from "../../tool/component/shared/conditionSelector";
 import TableOperator from "../../tool/component/shared/TableOperator";
 import style from "./style.module.less";
-import { Divider,Table } from "antd";
+import { Divider, Popconfirm, Table } from "antd";
 import moment from "moment";
 import CustomModal from "../../tool/component/shared/modal";
 import FormContent from "./element/FormContent";
@@ -124,9 +124,9 @@ export default class UserPage extends Component{
                 修改
               </a>
               <Divider type="vertical" />
-              <a href=" #" onClick={this.handleDelete(record)}>
-                删除
-              </a>
+              <Popconfirm title="确认删除?" onConfirm={() => this.handleDelete(record)}>
+                <a href=" #">删除</a>
+              </Popconfirm>
             </span>
           );
         }
