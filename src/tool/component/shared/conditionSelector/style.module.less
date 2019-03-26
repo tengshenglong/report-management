@@ -1,0 +1,41 @@
+@import "../../../../asset/styles/variables.less";
+
+.search-bar{
+  background: white;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: @shadow1;
+  :global(.ant-form){
+    display: flex;
+    .search-items{
+      flex:1;
+      :global(.ant-form-item){
+        width: 240px
+      }
+
+      /*.long-control{
+        &:global(.ant-form-item){
+          width: 240px;
+        }
+      }*/
+    }
+    .search-btns{
+      // width: 136px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .ant-form-item{
+        margin: 0;
+      }
+    }
+  }
+  :global{
+    .ant-form{
+      // display: flex;
+    }
+    .ant-form-item-label{
+      width: 80px;
+    }
+  }
+}
