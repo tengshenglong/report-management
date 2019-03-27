@@ -7,7 +7,7 @@ import styles from "./style.module.less";
 import { Link } from "react-router-dom";
 // import image from "../../../asset/welcomeLogo.png";
 
-// const { SubMenu } = Menu;
+ const { SubMenu } = Menu;
 const { Sider } = Layout;
 
 class CustomSider extends Component {
@@ -59,18 +59,39 @@ class CustomSider extends Component {
               <span>流程处理</span>
             </Link>
           </Menu.Item>
-          <Menu.Item key="4">
-            <Link to="/user/UserPage">
-              <Icon type="user" />
-              <span>用户管理</span>
-            </Link>
-          </Menu.Item>
-          <Menu.Item key="5">
-            <Link to="/role/RolePage">
-              <Icon type="user" />
-              <span>角色管理</span>
-            </Link>
-          </Menu.Item>
+          <SubMenu key="baseManagement" title={<span><Icon type="user" />基础管理</span>}>
+            <Menu.Item key="4">
+              <Link to="/user/UserPage">
+                <Icon type="user" />
+                <span>用户管理</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="5">
+              <Link to="/role/RolePage">
+                <Icon type="user" />
+                <span>角色管理</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="6">
+              <Link to="/menus/MenuPage">
+                <Icon type="user" />
+                <span>菜单管理</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="7">
+              <Link to="/pro/ProPage">
+                <Icon type="user" />
+                <span>产品组管理</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="8">
+              <Link to="/industry/InsPage">
+                <Icon type="user" />
+                <span>产业管理</span>
+              </Link>
+            </Menu.Item>
+          </SubMenu>
+
         </Menu>
       </Sider>
     );

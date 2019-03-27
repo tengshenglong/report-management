@@ -6,16 +6,20 @@ class CustomModal extends Component {
     super(props);
     this.state = { visible: false };
   }
+  handleCancel = () =>{
+    this.forceUpdate();
+  };
   render() {
     const flag = this.props.flag;
     return (
       <Modal
         title={this.props.title}
         visible={flag}
-        onCancel={this.props.handleCancel}
+        // onCancel={this.handleCancel}
         destroyOnClose={true}
         footer={null}
         centered={true}
+        closable={false}
       >
         {this.props.handleContent}
       </Modal>

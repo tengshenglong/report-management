@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, Col, Row, Tree } from "antd";
-import { Form } from "antd/lib/form";
 const { TreeNode } = Tree;
 
 const treeData = [
