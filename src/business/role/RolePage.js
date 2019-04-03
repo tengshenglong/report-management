@@ -15,7 +15,7 @@ export default class RolePage extends Component {
       dataList: [
         {
           id: "123",
-          role: "root",
+          roleName: "root",
           desc: "root用户"
         }
       ]
@@ -24,8 +24,8 @@ export default class RolePage extends Component {
     this.columns = [
       {
         title: "角色",
-        dataIndex: "role",
-        key: "role"
+        dataIndex: "roleName",
+        key: "roleName"
         // render: (text, record, index) => {
         //   return index + 1;
         // }
