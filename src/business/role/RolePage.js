@@ -4,6 +4,7 @@ import style from "./style.module.less";
 import { Divider, Popconfirm, Table } from "antd";
 import CustomModal from "../../tool/component/shared/modal";
 import FormContent from "./element/FormContent";
+
 export default class RolePage extends Component {
   constructor(props) {
     super(props);
